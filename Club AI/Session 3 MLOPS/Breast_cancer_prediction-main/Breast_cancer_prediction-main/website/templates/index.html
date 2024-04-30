@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breast Cancer Prediction</title>
+
+    <!-- The CSS file -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Breast Cancer Prediction</h1>
+
+    <!--  The form that will be used to send the data to the server. -->
+    <h3>
+      Enter the following values to predict if the tumor is benign or malignant.
+    </h3>
+
+    <!-- Button to load a csv file -->
+    <div class="csv-loader">
+      <input
+        type="file"
+        accept=".csv"
+        onchange="loadFile(event)"
+        name="csv"
+        id="file"
+        style="display: none"
+      />
+      <label
+        for="file"
+        style="cursor: pointer"
+        class="btn btn-outline-secondary"
+        ><i class="bi bi-upload"></i> Upload Your CSV File
+      </label>
+    </div>
+
+    <form method="POST" action="/" id="form">
+      <div class="tables">
+        <div class="table">
+          <table>
+            {% for column in columns_mean %}
+            <tr>
+              <td>
+                <label for={{ column }}>{{ column.replace("_", " ") }}</label>
+              </td>
+              <td><input type="number" step="0.000001" name={{ column }} id={{ column }} /></td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+        <div class="divider"></div>
+        <div class="table">
+          <table>
+            {% for column in columns_se %}
+            <tr>
+              <td>
+                <label for={{ column }}>{{ column.replace("_", " ") }}</label>
+              </td>
+              <td><input type="number" step="0.000001" name={{ column }} id={{ column }} /></td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+        <div class="divider"></div>
+        <div class="table">
+          <table>
+            {% for column in columns_worst %}
+            <tr>
+              <td>
+                <label for={{ column }}>{{ column.replace("_", " ") }}</label>
+              </td>
+              <td><input type="number" step="0.000001" name={{ column }} id={{ column }} /></td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+
+      <input type="submit" value="PREDICT" />
+    </form>
+
+    <!-- The prediction bloc-->
+    <div class="prediction">
+      <!-- if not valid data show error -->
+      {% if error %}
+      <h4>{{ error }}</h4>
+      {% endif %}
+      <!-- if valid data show prediction -->
+      {% if result %}
+      <h4>{{ result }}</h4>
+      {% endif %}
+    </div>
+
+    <!-- credits -->
+    <footer>
+      <p>Created by ENSIAS AI Club</p>
+    </footer>
+
+    <!-- The JS file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

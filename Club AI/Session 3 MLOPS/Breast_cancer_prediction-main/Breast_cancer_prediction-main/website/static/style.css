@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fcf8f8; /* Light grayish pink */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2{
+    text-align: center;
+    color: #ed008c; /* Pink */
+}
+
+h3 {
+    text-align: center;
+    color: #e9ad9a; /* Dark brown */
+}
+
+.csv-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.csv-loader label {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ed008c; /* Pink */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    width: 850px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fcf8f8; /* Light grayish pink */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+form .tables {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;    
+}
+
+.divider {
+    width: 2px;
+    height: 650px;
+    background-color: #ed008c; /* Pink */
+    margin: 20px 0;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
+}
+td input {
+    width: 70px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #050000; /* Dark brown */
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #ed008c; /* Pink */
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"]:hover {
+    background-color: #f5229d; /* Lighter pink on hover */
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #ed008c; /* Pink */
+}
+
+.prediction {
+    width: 850px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e1bdb1; /* Light grayish pink */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h4 {
+    text-align: center;
+    color: white; /* Pink */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ed008c; /* Pink */
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
