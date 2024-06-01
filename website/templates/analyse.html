@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultats de l'Analyse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Résultats de l'Analyse des Sentiments</h1>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/sentiment_plot.png') }}" alt="Graphique des Sentiments" id="plot-image">
+        </div>
+        <div class="buttons">
+            <a href="{{ url_for('static', filename='images/sentiment_plot.png') }}" download="sentiment_plot.png" class="btn">Télécharger l'image</a>
+
+            <a href="/downloadcsv" class="btn">Télécharger les données en CSV</a>
+            <a href="/downloadxl" class="btn">Télécharger les données en Excel</a>
+
+            <a href="/" class="btn">Revenir à la page d'accueil</a>
+        </div>    
+    </div>
+</body>
+</html>

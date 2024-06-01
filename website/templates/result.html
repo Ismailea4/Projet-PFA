@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter Sentiment Analysis - Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Résultats du scraping</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Tweet</th>
+                    <th>Likes</th>
+                    <th>Replies</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tweet in tweets %}
+                <tr>
+                    <td>{{ tweet.Username }}</td>
+                    <td>{{ tweet.Text }}</td>
+                    <td>{{ tweet.Likes }}</td>
+                    <td>{{ tweet.Replies }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div id="result-buttons">
+            <a href="/analyze" class="btn">Analyser les sentiments</a>
+            <a href="/" class="btn">Revenir à la page d'accueil</a>
+        </div>
+    </div>
+</body>
+</html>
